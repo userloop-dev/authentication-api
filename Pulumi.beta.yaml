@@ -1,0 +1,6 @@
+config:
+  aws:region: us-west-2
+  authentication-api:stage: beta
+  authentication-api:allow-origin: https://beta.app.userloop.dev
+  authentication-api:domain: beta.auth.api.userloop.services
+  authentication-api:dns-zone: auth.api.userloop.services

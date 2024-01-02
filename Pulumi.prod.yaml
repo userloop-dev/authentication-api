@@ -1,0 +1,6 @@
+config:
+  aws:region: us-west-2
+  authentication-api:stage: prod
+  authentication-api:allow-origin: https://app.userloop.dev
+  authentication-api:domain: auth.api.userloop.services
+  authentication-api:dns-zone: auth.api.userloop.services

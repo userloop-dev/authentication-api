@@ -1,0 +1,37 @@
+{
+	"name": "authentication-api",
+	"description": "Userloop Authentication System",
+	"main": "index.ts",
+	"version": "1.0.0",
+	"scripts": {
+		"format": "prettier --write '**/*.{js,ts,css,md,json}'",
+		"list": "pulumi stack ls",
+		"deploy": "rm -rf node_modules && rm -rf build && yarn install && tsc && pulumi stack select userloop/$npm_config_type && pulumi up",
+		"delete": "pulumi stack select userloop/$npm_config_type && pulumi destroy",
+		"deploy-beta": "npm run deploy --type=beta",
+		"delete-beta": "npm run delete --type=beta",
+		"deploy-prod": "npm run deploy --type=prod",
+		"delete-prod": "npm run delete --type=prod"
+	},
+	"dependencies": {
+		"@aws-sdk/client-cognito-identity-provider": "^3.474.0",
+		"@aws-sdk/client-lambda": "^3.474.0",
+		"@aws-sdk/client-s3": "^3.474.0",
+		"@pulumi/aws": "^5.14.0",
+		"@pulumi/pulumi": "^3.0.0",
+		"aws-sdk": "^2.1227.0"
+	},
+	"devDependencies": {
+		"@aws-sdk/client-dynamodb": "^3.474.0",
+		"@aws-sdk/types": "^3.178.0",
+		"@types/node": "^14.18.38",
+		"@types/uuid": "^9.0.1",
+		"prettier": "^2.7.1",
+		"typescript": "^5.3.3",
+		"uuid": "^9.0.0"
+	},
+	"engines": {
+		"npm": ">=10.0.0",
+		"node": ">=20.0.0"
+	}
+}
